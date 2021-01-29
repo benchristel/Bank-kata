@@ -1,10 +1,10 @@
-package org.craftedsw;
+package kata;
 
-import static org.craftedsw.builders.DateCreator.date;
-import static org.craftedsw.domain.Amount.amountOf;
+import static kata.builders.DateCreator.date;
+import static kata.domain.Amount.amountOf;
 
-import org.craftedsw.domain.Account;
-import org.craftedsw.domain.Statement;
+import kata.domain.Account;
+import kata.domain.Statement;
 
 public class StartApp {
 	

@@ -1,4 +1,4 @@
-package org.craftedsw.domain;
+package kata.domain;
 
 import java.io.PrintStream;
 import java.util.LinkedList;

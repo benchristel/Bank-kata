@@ -1,6 +1,6 @@
-package org.craftedsw.domain;
+package kata.domain;
 
-import static org.craftedsw.domain.Amount.amountOf;
+import static kata.domain.Amount.amountOf;
 
 import java.io.PrintStream;
 import java.util.Date;

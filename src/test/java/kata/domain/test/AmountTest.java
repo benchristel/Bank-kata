@@ -1,12 +1,12 @@
-package org.craftedsw.domain.test;
+package kata.domain.test;
 
-import static org.craftedsw.domain.Amount.amountOf;
+import static kata.domain.Amount.amountOf;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-import org.craftedsw.domain.Amount;
+import kata.domain.Amount;
 import org.junit.Test;
 
 public class AmountTest {

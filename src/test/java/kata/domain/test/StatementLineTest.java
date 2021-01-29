@@ -1,13 +1,13 @@
-package org.craftedsw.domain.test;
+package kata.domain.test;
 
-import static org.craftedsw.builders.DateCreator.date;
-import static org.craftedsw.builders.TransactionBuilder.aTransaction;
-import static org.craftedsw.domain.Amount.amountOf;
+import static kata.builders.DateCreator.date;
+import static kata.builders.TransactionBuilder.aTransaction;
+import static kata.domain.Amount.amountOf;
 import static org.mockito.Mockito.verify;
 
 import java.io.PrintStream;
 
-import org.craftedsw.domain.StatementLine;
+import kata.domain.StatementLine;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

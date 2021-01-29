@@ -1,9 +1,9 @@
-package org.craftedsw.builders;
+package kata.builders;
 
 import java.util.Date;
 
-import org.craftedsw.domain.Amount;
-import org.craftedsw.domain.Transaction;
+import kata.domain.Amount;
+import kata.domain.Transaction;
 
 public class TransactionBuilder {
 	

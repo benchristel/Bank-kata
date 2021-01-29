@@ -52,7 +52,7 @@ Do it yourself first and then compare the solutions.
 
 The files to look at:
 
-[statement_printing.story](https://github.com/sandromancuso/Bank-kata/blob/master/src/test/resources/org/craftedsw/acceptancetests/stories/statement_printing.story)  
-[StatementPrintingSteps.java](https://github.com/sandromancuso/Bank-kata/blob/master/src/test/java/org/craftedsw/acceptancetests/steps/StatementPrintingSteps.java)  
-[Unit tests](https://github.com/sandromancuso/Bank-kata/tree/master/src/test/java/org/craftedsw/domain/test)  
-[Domain classes](https://github.com/sandromancuso/Bank-kata/tree/master/src/main/java/org/craftedsw/domain)  
+[statement_printing.story](https://github.com/sandromancuso/Bank-kata/blob/master/src/test/resources/org/craftedsw/acceptancetests/stories/statement_printing.story)
+[StatementPrintingSteps.java](https://github.com/sandromancuso/Bank-kata/blob/master/src/test/java/org/craftedsw/acceptancetests/steps/StatementPrintingSteps.java)
+[Unit tests](https://github.com/sandromancuso/Bank-kata/tree/master/src/test/java/org/craftedsw/domain/test)
+[Domain classes](https://github.com/sandromancuso/Bank-kata/tree/master/src/main/java/org/craftedsw/domain)

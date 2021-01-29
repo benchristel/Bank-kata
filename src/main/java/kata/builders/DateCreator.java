@@ -1,4 +1,4 @@
-package org.craftedsw.builders;
+package kata.builders;
 
 import java.util.Date;
 

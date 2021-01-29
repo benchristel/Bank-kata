@@ -1,11 +1,11 @@
-package org.craftedsw.domain.test;
+package kata.domain.test;
 
-import static org.craftedsw.matchers.DayMonthYearMatcher.hasDayMonthYear;
+import static kata.matchers.DayMonthYearMatcher.hasDayMonthYear;
 import static org.junit.Assert.assertThat;
 
 import java.util.Date;
 
-import org.craftedsw.builders.DateCreator;
+import kata.builders.DateCreator;
 import org.junit.Test;
 
 public class DateCreatorTest {

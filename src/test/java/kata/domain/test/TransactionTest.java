@@ -1,7 +1,7 @@
-package org.craftedsw.domain.test;
+package kata.domain.test;
 
-import static org.craftedsw.builders.DateCreator.date;
-import static org.craftedsw.domain.Amount.amountOf;
+import static kata.builders.DateCreator.date;
+import static kata.domain.Amount.amountOf;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -10,8 +10,8 @@ import static org.mockito.Mockito.verify;
 import java.io.PrintStream;
 import java.util.Date;
 
-import org.craftedsw.domain.Amount;
-import org.craftedsw.domain.Transaction;
+import kata.domain.Amount;
+import kata.domain.Transaction;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

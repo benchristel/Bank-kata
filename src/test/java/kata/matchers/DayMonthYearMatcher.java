@@ -1,4 +1,4 @@
-package org.craftedsw.matchers;
+package kata.matchers;
 
 import java.util.Calendar;
 import java.util.Date;
