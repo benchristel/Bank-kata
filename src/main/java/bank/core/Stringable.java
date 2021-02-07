@@ -1,7 +1,5 @@
 package bank.core;
 
-import javax.annotation.Nonnull;
-
 public interface Stringable extends CharSequence {
     @Override
     default int length() {
@@ -18,6 +16,5 @@ public interface Stringable extends CharSequence {
         return toString().subSequence(start, end);
     }
 
-    @Nonnull
     String toString();
 }

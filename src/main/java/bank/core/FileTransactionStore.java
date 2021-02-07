@@ -1,10 +1,5 @@
 package bank.core;
 
-import com.google.common.io.LineReader;
-import org.apache.commons.collections.iterators.TransformIterator;
-import org.apache.commons.io.*;
-
-import javax.annotation.Nonnull;
 import java.io.*;
 import java.nio.file.*;
 import java.time.LocalDate;
@@ -25,7 +20,6 @@ public class FileTransactionStore implements AppendOnlyStore<Transaction> {
     }
 
     @Override
-    @Nonnull
     public Iterator<Transaction> iterator() {
         try {
             Stream<Transaction> stream = Files.lines(Paths.get("/tmp/txns")).map(line -> {

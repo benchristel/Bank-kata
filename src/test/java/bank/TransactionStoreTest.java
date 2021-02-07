@@ -2,13 +2,14 @@ package bank;
 
 import bank.core.AppendOnlyStore;
 import bank.core.Transaction;
-import org.codehaus.plexus.util.FileUtils;
+import org.apache.commons.io.FileUtils;
 import org.junit.*;
 
+import java.io.File;
 import java.time.LocalDate;
 
+import static bank.functions.CollectionUtils.collectArrayList;
 import static bank.functions.CollectionUtils.listOf;
-import static com.google.common.collect.Lists.newArrayList;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -26,8 +27,8 @@ public abstract class TransactionStoreTest {
 
     @Before
     public void
-    cleanUpFile() throws Exception {
-        FileUtils.forceDelete("/tmp/txns");
+    cleanUpFile() {
+        FileUtils.deleteQuietly(new File("/tmp/txns"));
     }
 
     @Test
@@ -42,8 +43,8 @@ public abstract class TransactionStoreTest {
         LocalDate givenDate = LocalDate.parse("2021-02-06");
         store().add(new Transaction(givenDate, 123));
         assertThat(
-            listOf(store()),
-            is(equalTo(newArrayList(new Transaction(givenDate, 123))))
+            collectArrayList(store()),
+            is(equalTo(listOf(new Transaction(givenDate, 123))))
         );
     }
 
@@ -54,8 +55,8 @@ public abstract class TransactionStoreTest {
         store().add(new Transaction(givenDate, 123));
         store().add(new Transaction(givenDate, -456));
         assertThat(
-            listOf(store()),
-            is(equalTo(newArrayList(
+            collectArrayList(store()),
+            is(equalTo(listOf(
                 new Transaction(givenDate, 123),
                 new Transaction(givenDate, -456)
             )))

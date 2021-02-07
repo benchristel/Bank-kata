@@ -12,14 +12,11 @@ import bank.edges.ATM;
 import bank.edges.AppendOnlyList;
 import com.sun.tools.javac.util.List;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-@RunWith(MockitoJUnitRunner.class)
 public class ATMTest {
 
     private static final String BLANK_STATEMENT = "DATE | CREDIT | DEBIT | BALANCE\n";

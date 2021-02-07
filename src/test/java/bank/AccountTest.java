@@ -2,20 +2,19 @@ package bank;
 
 import bank.core.*;
 import bank.edges.AppendOnlyList;
-import com.google.common.collect.Lists;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
+import static bank.functions.CollectionUtils.listOf;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
-import static bank.functions.CollectionUtils.listOf;
+import static bank.functions.CollectionUtils.collectArrayList;
 
 public class AccountTest {
     @Rule
@@ -47,7 +46,7 @@ public class AccountTest {
         } catch (Exception e) {
         }
 
-        assertThat(listOf(account().transactions()), is(empty()));
+        assertThat(collectArrayList(account().transactions()), is(empty()));
     }
 
     @Test
@@ -98,10 +97,13 @@ public class AccountTest {
     public void
     records_one_deposit() throws Exception {
         account().deposit(1);
-        ArrayList<Transaction> expected = Lists.newArrayList(
+        List<Transaction> expected = listOf(
             new Transaction(today, 1)
         );
-        assertThat(listOf(account().transactions()), is(equalTo(expected)));
+        assertThat(
+            collectArrayList(account().transactions()),
+            is(equalTo(expected))
+        );
     }
 
     @Test
@@ -109,11 +111,14 @@ public class AccountTest {
     records_multiple_deposits() throws Exception {
         account().deposit(500);
         account().deposit(300);
-        ArrayList<Transaction> expected = Lists.newArrayList(
+        List<Transaction> expected = listOf(
             new Transaction(today, 500),
             new Transaction(today, 300)
         );
-        assertThat(listOf(account().transactions()), is(equalTo(expected)));
+        assertThat(
+            collectArrayList(account().transactions()),
+            is(equalTo(expected))
+        );
     }
 
     @Test
@@ -122,12 +127,12 @@ public class AccountTest {
         account().deposit(800);
         account().withdraw(500);
         account().withdraw(300);
-        ArrayList<Transaction> expected = Lists.newArrayList(
+        List<Transaction> expected = listOf(
             new Transaction(today, 800),
             new Transaction(today, -500),
             new Transaction(today, -300)
         );
-        assertThat(listOf(account().transactions()), is(equalTo(expected)));
+        assertThat(collectArrayList(account().transactions()), is(equalTo(expected)));
     }
 
     private Account accountCache;

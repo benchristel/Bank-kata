@@ -2,13 +2,13 @@ package bank;
 
 import bank.core.StatementView;
 import bank.core.Transaction;
-import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import static bank.functions.CollectionUtils.listOf;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -27,7 +27,7 @@ public class StatementViewTest {
     public void
     displays_one_transaction() throws Exception {
         shouldOutput(
-            Lists.newArrayList(new Transaction(date(2020, 12, 23), 123)),
+            listOf(new Transaction(date(2020, 12, 23), 123)),
             "DATE | CREDIT | DEBIT | BALANCE\n"
                 + "12/23/2020 | 123 |  | 123\n");
     }
@@ -36,7 +36,7 @@ public class StatementViewTest {
     public void
     displays_two_transactions() throws Exception {
         shouldOutput(
-            Lists.newArrayList(
+            listOf(
                 new Transaction(date(2020, 12, 23), 456),
                 new Transaction(date(2021, 11, 24), -123)
             ),

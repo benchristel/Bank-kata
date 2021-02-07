@@ -1,6 +1,5 @@
 package bank.core;
 
-import javax.annotation.Nonnull;
 import java.io.IOException;
 
 public class StatementView {
@@ -38,7 +37,6 @@ public class StatementView {
             this.runningBalance = runningBalance;
         }
 
-        @Nonnull
         public String toString() {
             return date + " | " + amount.credit() + " | " + amount.debit() + " | " + runningBalance + "\n";
         }
