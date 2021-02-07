@@ -7,7 +7,7 @@ import java.util.Objects;
 import static java.util.Objects.hash;
 
 public class Transaction {
-    final int amount;
+    private final int amount;
     final LocalDate date;
 
     public Transaction(LocalDate date, int amount) {
@@ -15,8 +15,20 @@ public class Transaction {
         this.amount = amount;
     }
 
-    boolean isCredit() {
-        return amount > 0;
+    public boolean isCredit() {
+        return netCredit() > 0;
+    }
+
+    public int netCredit() {
+        return amount;
+    }
+
+    public String toString() {
+        return "Transaction(" + date.format(DateTimeFormatter.ISO_DATE) + ", " + amount + ")";
+    }
+
+    public String date() {
+        return date.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
     }
 
     @Override
@@ -31,13 +43,5 @@ public class Transaction {
     @Override
     public int hashCode() {
         return Objects.hash(amount, date);
-    }
-
-    public String toString() {
-        return "Transaction(" + date.format(DateTimeFormatter.ISO_DATE) + ", " + amount + ")";
-    }
-
-    public String date() {
-        return date.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
     }
 }

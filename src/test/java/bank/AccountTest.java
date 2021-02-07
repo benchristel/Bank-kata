@@ -15,6 +15,7 @@ import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
+import static bank.functions.CollectionUtils.listOf;
 
 public class AccountTest {
     @Rule
@@ -127,12 +128,6 @@ public class AccountTest {
             new Transaction(today, -300)
         );
         assertThat(listOf(account().transactions()), is(equalTo(expected)));
-    }
-
-    private <T> List<T> listOf(Iterable<T> i) {
-        List<T> list = new ArrayList<>();
-        i.forEach(list::add);
-        return list;
     }
 
     private Account accountCache;

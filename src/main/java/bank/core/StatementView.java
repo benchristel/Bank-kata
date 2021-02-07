@@ -15,7 +15,7 @@ public class StatementView {
         statement.append("DATE | CREDIT | DEBIT | BALANCE\n");
         int runningBalance = 0;
         for (Transaction t : transactions) {
-            runningBalance += t.amount;
+            runningBalance += t.netCredit();
             statement.append(TransactionView.of(t, runningBalance));
         }
     }
@@ -23,8 +23,8 @@ public class StatementView {
     private static class TransactionView implements Stringable {
         private static TransactionView of(Transaction transaction, int runningBalance) {
             AmountView amountView = transaction.isCredit()
-                ? new CreditView(transaction.amount)
-                : new DebitView(transaction.amount);
+                ? new CreditView(transaction.netCredit())
+                : new DebitView(transaction.netCredit());
             return new TransactionView(transaction.date(), amountView, runningBalance);
         }
 

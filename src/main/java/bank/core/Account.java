@@ -23,7 +23,7 @@ public class Account {
 
     private int balance() {
         int total = 0;
-        for (Transaction t : transactions) total += t.amount;
+        for (Transaction t : transactions) total += t.netCredit();
         return total;
     }
 

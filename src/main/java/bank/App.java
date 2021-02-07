@@ -4,11 +4,13 @@ import bank.core.*;
 import bank.edges.ATM;
 import bank.edges.AppendOnlyList;
 
+import java.io.FileWriter;
+
 import static java.lang.System.exit;
 
 public class App {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		AppendOnlyStore<Transaction> transactions = new AppendOnlyList<>();
 		ATM account = new ATM(System.out, App::printAndExit, new Account(transactions, new TransactionFactory(new Clock())));
 
